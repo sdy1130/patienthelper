@@ -1,0 +1,32 @@
+{
+    "name": "fortamet",
+    "purpose": ["diabetes"],
+    "amount": 100,
+    "count": 1,
+    "frequency": "daily",
+    "symptom": []
+}
+{
+    "name": "valium",
+    "purpose": ["insomnia"],
+    "amount": 5,
+    "count": 2,
+    "frequency": "daily",
+    "symptom": []
+}
+{
+    "name": "benazepril",
+    "purpose": ["high blood pressure", "heart failure", "diabetic kidney disease"],
+    "amount": 30,
+    "count": 1,
+    "frequency": "daily",
+    "symptom": []
+}
+{
+    "name": "amlodipine",
+    "purpose": ["high blood pressure", "coronary artery disease"],
+    "amount": 5,
+    "count": 1,
+    "frequency": "daily",
+    "symptom": []
+}
