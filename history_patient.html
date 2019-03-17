@@ -9,7 +9,7 @@
 	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-		<script src="./history.js"></script>
+		<script src="./history_patient.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	    <link rel="stylesheet" type="text/css" href="./styles/user.css">
 	    <link rel="stylesheet" type="text/css" href="./styles/navbar.css">
@@ -23,7 +23,6 @@
             	<div class="col-sm-10">
                 	<h3 class="userID">
 						<!-- <button class="btn btn-success" id="followButton" ng-if="isFollowing && loggedIn"><i class="fa fa-check"></i> Following</button> -->
-						<a href="/add_prescription.html" class="w3-button w3-black" style="margin-bottom:5px;">Click here to Add Prescription</a>
                 	</h3>
                     <h5><b>First Name:</b> <span>{{patient.firstname}}</span></h5>
                     <h5><b>Last Name:</b> <span>{{patient.lastname}}</span></h5>
@@ -48,14 +47,14 @@
     	<div class="container" id="restaurantReviewContainer">
 			<h2 class="font1">Medications</h2>
 			<div ng-if="!(patient_medication_and_date.length>0)"><h3 class="font2">No Past Medications</h2></div>
-			<div class="media border p-3 whiteBackgroud" ng-repeat="b in patient_medication_and_date">
-				<img src="./red.jpg" ng-if="b[2]" class="mr-3 mt-3 rounded-circle imagesRest">
-				<img src="./blue.png" ng-if="!b[2]" class="mr-3 mt-3 rounded-circle imagesRest">
-				<div class="media-body">
-					<h4><small class="date"><i>Prescribed on {{convertDate(b[1])}}</i></small></h4>
-					<p>{{b[0]}}</p>
-				</div>
-			</div>
-		</div>
+        	<div class="media border p-3 whiteBackgroud" ng-repeat="b in patient_medication_and_date">
+				<img src="./red.jpg" ng-if="b[3]" class="mr-3 mt-3 rounded-circle imagesRest">
+				<img src="./blue.png" ng-if="!b[3]" class="mr-3 mt-3 rounded-circle imagesRest">
+            	<div class="media-body">
+                	<h4><small class="date"><i>Prescribed on {{convertDate(b[1])}}</i></small></h4>
+                	<p>{{b[0]}}</p>
+            	</div>
+        	</div>
+    	</div>
  	</body>
 </html>

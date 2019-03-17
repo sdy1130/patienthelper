@@ -50,7 +50,8 @@ app.get('/patient', (req, res) => {
 
 app.post('/patient', (req, res) => {
 	const symptom = req.body.symptom;
-	const date = req.body.date;
+    const date = req.body.date;
+
 
     const fs = require('fs');
 
@@ -64,14 +65,15 @@ app.post('/patient', (req, res) => {
 
 app.post('/prescription', (req, res) => {
 	const prescription = req.body.prescription;
-	const date = req.body.date;
+    const date = req.body.date;
+    const beers_flag = req.body.beers_flag;
 
     const fs = require('fs');
 
     let raw_data = fs.readFileSync("./patient.json");
     let patient = JSON.parse(raw_data);
   
-    patient[0].prescription.push([prescription, date]);
+    patient[0].prescription.push([prescription, date, beers_flag]);
     let write_data = JSON.stringify(patient);
     fs.writeFileSync('./patient.json', write_data);
 });

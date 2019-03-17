@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Symptoms Checker</title>
 <style>
   * {
@@ -82,7 +83,7 @@
 </style>
 
 <h1 class="center" id="headline">
-Do you have any medical symptoms you are experiencing?
+Do you have any medical symptom you are experiencing?
 </h1>
 <div id="info">
   <p id="info_start">Click on the microphone icon and begin speaking.</p>
@@ -134,9 +135,8 @@ Do you have any medical symptoms you are experiencing?
     <select id="select_dialect"></select>
   </div>
   <div>
-    <a href="/history.html">
-        Click here to view your past symptoms and medications.
-    </a>
+    <a href="/history_patient.html" class="w3-button w3-black" style="margin-top:20px;">Click here to view your past symptoms and medications.</a>
+        
   </div>
 </div>
 <script>
@@ -405,7 +405,7 @@ function submitButton(){
 
   const submission = {
 				'symptom': final_transcript,
-				'date': new Date(),
+        'date': new Date(),
       };
     
   console.log(submission);

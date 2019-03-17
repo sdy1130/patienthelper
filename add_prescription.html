@@ -63,15 +63,16 @@
                     console.log(prescription);
 
                     var prescription_low = prescription.toLowerCase();
+                    console.log(prescription_low);
                     if (prescription_low.includes("valium")){
                         if (confirm("You are prescribing 'Valium' to a person who is aged 67 years old, which goes against Beers criteria! Would you like to proceed?")) {
-                            SendPOSTRequest(prescription);
+                            SendPOSTRequest(prescription, true);
                             alert("Presciption submitted! Feel free to exit the browser or go back.");
                         } else {
                             alert("Pleae refresh this page to re-write the prescription form.");
                         }
                     } else {
-                        SendPOSTRequest(prescription);
+                        SendPOSTRequest(prescription, false);
                         alert("Presciption submitted! Feel free to exit the browser or go back.");
                     }
                     // var info = eval ( "(" + xmlHttp.responseText + ")" );
@@ -82,7 +83,7 @@
                 }                    
             }
         }
-        function SendPOSTRequest(prescription){
+        function SendPOSTRequest(prescription, beers_contradicting){
             var xhr = new XMLHttpRequest();
             xhr.open("POST", '/prescription', true);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -96,6 +97,7 @@
             const submission = {
                             'prescription': prescription,
                             'date': new Date(),
+                            'beers_flag': beers_contradicting
                 };
 
             xhr.send(JSON.stringify(submission));
@@ -129,7 +131,7 @@
                 // const queryURL = "https://api.typeform.com/forms/m49XRy/responses?since=" + dateString; // type form id
 
                 // wait 5 seconds
-                setTimeout(SendGETRequest, 1000);
+                setTimeout(SendGETRequest, 3000);
             }
             });
         });

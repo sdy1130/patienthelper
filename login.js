@@ -13,7 +13,7 @@ app.controller('loginController', function($scope, $http, $window) {
             //$http.get(url);
         }
         else if($scope.email == "1002108587"){
-            location.href = '/add_prescription.html';
+            location.href = '/patient_table.html';
             //$http.get(url);
         }
         else{
