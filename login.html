@@ -10,16 +10,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./login.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body>
+<body ng-app="webApp" ng-controller="loginController">
     <div class="login-dark" style="height: 599px;">
         <form method="post">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><img src="assets/img/avatar_2x.png"></div>
-            <div class="form-group"><input type="email" name="email" placeholder="Username" class="form-control" /></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
+            <div class="form-group"><input type="text" name="email" placeholder="ID" class="form-control" ng-model="email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" ng-model="password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" ng-click="login()">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

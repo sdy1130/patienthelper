@@ -26,7 +26,17 @@ app.use(bodyParser.json());
 // get Routes
 app.get('/', (req, res) => {
     console.log("get request received");
-	res.status(200).sendFile(__dirname + "/add_prescription.html");
+	res.status(200).sendFile(__dirname + "/login.html");
+});
+
+app.get('/login/1002421140', (req, res) => {
+    console.log(__dirname + "/patient.html");
+    res.status(200).sendFile(__dirname + "/patient.html");
+});
+
+app.get('/login/1002108587', (req, res) => {
+    console.log("hit 2");
+    res.status(200).sendFile(__dirname + "/add_prescription.html");
 });
 
 app.get('/patient', (req, res) => {

@@ -12,17 +12,17 @@
 </head>
 
 <body id="page-top">
-    <header class="masthead" style="background-image:url('assets/img/intro-bg.jpg');">
+    <!-- <header class="masthead" style="background-image:url('assets/img/intro-bg.jpg');">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <h1 class="brand-heading">You are done!</h1>
-                        <p class="intro-text">Please refresh this page if you would like prescribe another medication.</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a></div>
+                        <p class="intro-text">Please refresh this page if you would like prescribe another medication.</p></div>
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -66,11 +66,13 @@
                     if (prescription_low.includes("valium")){
                         if (confirm("You are prescribing 'Valium' to a person who is aged 67 years old, which goes against Beers criteria! Would you like to proceed?")) {
                             SendPOSTRequest(prescription);
+                            alert("Presciption submitted! Feel free to exit the browser or go back.");
                         } else {
                             alert("Pleae refresh this page to re-write the prescription form.");
                         }
                     } else {
                         SendPOSTRequest(prescription);
+                        alert("Presciption submitted! Feel free to exit the browser or go back.");
                     }
                     // var info = eval ( "(" + xmlHttp.responseText + ")" );
 
