@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Symptoms Checker</title>
 <style>
   * {
@@ -36,7 +35,7 @@
   }
   .final {
     color: black;
-    padding-right: 3px; 
+    padding-right: 3px;
   }
   .interim {
     color: gray;
@@ -61,6 +60,10 @@
     font-size: 40px;
     font-weight: 300;
   }
+  #suggestedSymps {
+    font-size: 30px;
+    font-weight: 300;
+  }
   #info {
     font-size: 20px;
     text-align: center;
@@ -83,8 +86,67 @@
 </style>
 
 <h1 class="center" id="headline">
-Do you have any medical symptom you are experiencing?
+Do you have any medical symptoms you are experiencing?
 </h1>
+
+<!-- suggested symptoms START-->
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  align-items: center;
+  padding-left: 50px
+}
+
+</style>
+
+<h1 class="center" id="suggestedSymps">
+Some possible symptoms you may have are:
+</h1>
+
+<div class="inner_div" width=screen.width style="padding-bottom:50px">
+  <div class='row' align=center>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="dizziness.png" alt="dizziness" width="200" height="200" style="padding-bottom:0.5em;" />
+        Dizziness
+      </div>
+    </div>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="diarrhea.png" alt="diarrhea" width="200" height="200" style="padding-bottom:0.5em;" />
+        Diarrhea
+      </div>
+    </div>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="chestPain.png" alt="chest pain" width="200" height="200" style="padding-bottom:0.5em;" />
+        Chest Pain
+      </div>
+    </div>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="rash.png" alt="rash" width="200" height="200" style="padding-bottom:0.5em;" />
+        Rash
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- suggested symptoms END-->
+
 <div id="info">
   <p id="info_start">Click on the microphone icon and begin speaking.</p>
   <p id="info_speak_now">Speak now. Then click "Submit" button below when you are done answering. If you would like to try again, click "Try Again" button.</p>
@@ -135,8 +197,9 @@ Do you have any medical symptom you are experiencing?
     <select id="select_dialect"></select>
   </div>
   <div>
-    <a href="/history_patient.html" class="w3-button w3-black" style="margin-top:20px;">Click here to view your past symptoms and medications.</a>
-        
+    <a href="/history.html">
+        Click here to view your past symptoms and medications.
+    </a>
   </div>
 </div>
 <script>
@@ -405,15 +468,15 @@ function submitButton(){
 
   const submission = {
 				'symptom': final_transcript,
-        'date': new Date(),
+				'date': new Date(),
       };
-    
+
   console.log(submission);
 
   xhr.send(JSON.stringify(submission));
 
   copy_button.innerHTML = "Submitted";
-  // xhr.send(new Int8Array()); 
+  // xhr.send(new Int8Array());
   // xhr.send(document);
 }
 
