@@ -12,10 +12,26 @@
 		<script src="./history_patient.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	    <link rel="stylesheet" type="text/css" href="./styles/user.css">
-	    <link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+		<link rel="stylesheet" type="text/css" href="./styles/navbar.css">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 	</head>
 
  	<body ng-app="webApp" ng-controller="userProfileController" class="greyBackground">
+		<div>
+				<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(195,195,195);">
+					<div class="container"><a class="navbar-brand" href="#"><span style="color:red">m</span>trackr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+						<div class="collapse navbar-collapse"
+							id="navcol-1">
+							<ul class="nav navbar-nav ml-auto">
+								<li class="nav-item" role="presentation"><a class="nav-link active" href="/">Back to Login Page</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
 
     	<div class="container-fluid greyGradientBackground">
         	<div class="row" id="userInfoRow">
@@ -48,8 +64,7 @@
 			<h2 class="font1">Medications</h2>
 			<div ng-if="!(patient_medication_and_date.length>0)"><h3 class="font2">No Past Medications</h2></div>
         	<div class="media border p-3 whiteBackgroud" ng-repeat="b in patient_medication_and_date">
-				<img src="./red.jpg" ng-if="b[3]" class="mr-3 mt-3 rounded-circle imagesRest">
-				<img src="./blue.png" ng-if="!b[3]" class="mr-3 mt-3 rounded-circle imagesRest">
+				<img src="./pill.jpg" class="mr-3 mt-3 rounded-circle imagesRest">
             	<div class="media-body">
                 	<h4><small class="date"><i>Prescribed on {{convertDate(b[1])}}</i></small></h4>
                 	<p>{{b[0]}}</p>
