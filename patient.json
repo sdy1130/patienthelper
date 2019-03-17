@@ -1,8 +1,1 @@
-[{
-    "firstname": "Alawa",
-    "lastname": "Abenaki",
-    "age": 67,
-    "gender": "female",
-    "symptom": [],
-    "prescription": []
-}]
+[{"firstname":"Alawa","lastname":"Abenaki","age":67,"gender":"male","symptom":[["I am getting rash on my back","2019-03-17T06:42:35.376Z"],["I am feeling dizzy","2019-03-17T06:49:14.512Z"],["I am feeling sad","2019-03-17T07:49:23.789Z"]],"prescription":[["Fortamet, Valium","2019-03-17T06:42:35.376Z"],["Benazepril, Fortamet","2019-03-17T07:49:23.789Z"],["Kimchi","2019-03-17T09:17:11.163Z"],["Kimchi Tacos","2019-03-17T09:30:31.544Z"]]}]
