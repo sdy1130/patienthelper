@@ -8,11 +8,11 @@ app.controller('loginController', function($scope, $http, $window) {
         const url = '/login/' + $scope.email;
         console.log(url);
 
-        if($scope.email == "1002421140"){
+        if($scope.email == "alawa101"){
             location.href = '/patient.html';
             //$http.get(url);
         }
-        else if($scope.email == "1002108587"){
+        else if($scope.email == "charliey"){
             location.href = '/patient_table.html';
             //$http.get(url);
         }
