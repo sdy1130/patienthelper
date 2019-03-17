@@ -2,9 +2,9 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
 <title>Symptoms Checker</title>
 <style>
   * {
@@ -40,7 +40,7 @@
   }
   .final {
     color: black;
-    padding-right: 3px; 
+    padding-right: 3px;
   }
   .interim {
     color: gray;
@@ -65,6 +65,10 @@
     font-size: 40px;
     font-weight: 300;
   }
+  #suggestedSymps {
+    font-size: 30px;
+    font-weight: 300;
+  }
   #info {
     font-size: 20px;
     text-align: center;
@@ -86,22 +90,79 @@
   }
 </style>
 
-<div>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(195,195,195);">
-        <div class="container"><a class="navbar-brand" href="#"><span style="color:red">m</span>trackr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/">Back to Login Page</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+    <div class="container"><a class="navbar-brand logo" href="#"><span style="color:red">m</span>trackr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+            id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/">Back to Login Page</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<h1 class="center" id="headline" style="margin-top:100px">
+Do you have any medical symptoms you are experiencing?
+</h1>
+
+<!-- suggested symptoms START-->
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  align-items: center;
+  padding-left: 50px
+}
+
+</style>
+
+<h1 class="center" id="suggestedSymps">
+Some possible symptoms you may have are:
+</h1>
+
+<div class="inner_div" width=screen.width style="padding-bottom:50px">
+  <div class='row' align=center>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="dizziness.png" alt="dizziness" width="200" height="200" style="padding-bottom:0.5em;" />
+        Dizziness
+      </div>
+    </div>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="diarrhea.png" alt="diarrhea" width="200" height="200" style="padding-bottom:0.5em;" />
+        Diarrhea
+      </div>
+    </div>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="chestPain.png" alt="chest pain" width="200" height="200" style="padding-bottom:0.5em;" />
+        Chest Pain
+      </div>
+    </div>
+    <div class='column'>
+      <div style="width:200px; font-size:120%; text-align:center;">
+        <img src="rash.png" alt="rash" width="200" height="200" style="padding-bottom:0.5em;" />
+        Rash
+      </div>
+    </div>
+  </div>
 </div>
 
-<h1 class="center" id="headline">
-Do you have any medical symptom you are experiencing?
-</h1>
+<!-- suggested symptoms END-->
+
 <div id="info">
   <p id="info_start">Click on the microphone icon and begin speaking.</p>
   <p id="info_speak_now">Speak now. Then click "Submit" button below when you are done answering. If you would like to try again, click "Try Again" button.</p>
@@ -152,8 +213,9 @@ Do you have any medical symptom you are experiencing?
     <select id="select_dialect"></select>
   </div>
   <div>
-    <a href="/history_patient.html" class="w3-button w3-black" style="margin-top:20px;">Click here to view your past symptoms and medications.</a>
-        
+    <a href="/history.html" class="w3-button w3-black" style="margin-top:10px">
+        Click here to view your past symptoms and medications.
+    </a>
   </div>
 </div>
 <script>
@@ -422,15 +484,15 @@ function submitButton(){
 
   const submission = {
 				'symptom': final_transcript,
-        'date': new Date(),
+				'date': new Date(),
       };
-    
+
   console.log(submission);
 
   xhr.send(JSON.stringify(submission));
 
   copy_button.innerHTML = "Submitted";
-  // xhr.send(new Int8Array()); 
+  // xhr.send(new Int8Array());
   // xhr.send(document);
 }
 

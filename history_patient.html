@@ -14,26 +14,24 @@
 	    <link rel="stylesheet" type="text/css" href="./styles/user.css">
 		<link rel="stylesheet" type="text/css" href="./styles/navbar.css">
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+		<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
 	</head>
 
  	<body ng-app="webApp" ng-controller="userProfileController" class="greyBackground">
-		<div>
-				<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(195,195,195);">
-					<div class="container"><a class="navbar-brand" href="#"><span style="color:red">m</span>trackr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+			<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+					<div class="container"><a class="navbar-brand logo" href="#"><span style="color:red">m</span>trackr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
 						<div class="collapse navbar-collapse"
-							id="navcol-1">
+							id="navbarNav">
 							<ul class="nav navbar-nav ml-auto">
-								<li class="nav-item" role="presentation"><a class="nav-link active" href="/">Back to Login Page</a></li>
+								<li class="nav-item" role="presentation"><a class="nav-link" href="/">Back to Login Page</a></li>
 							</ul>
 						</div>
 					</div>
 				</nav>
-			</div>
 
-    	<div class="container-fluid greyGradientBackground">
+    	<div class="container-fluid greyGradientBackground" style="margin-top:50px">
         	<div class="row" id="userInfoRow">
             	<img src="./pic.png" id="profilePic" class="rounded-circle userImage" alt="Cinque Terre">
             	<div class="col-sm-10">
