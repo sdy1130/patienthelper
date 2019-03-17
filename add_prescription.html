@@ -64,7 +64,7 @@
                     var prescription_low = prescription.toLowerCase();
                     console.log(prescription_low);
                     if (prescription_low.includes("valium")){
-                        if (confirm("WARNING! You are prescribing 'Valium' to a person who is aged 67 years old, which might be dangerous for an elderly patient! Please review Beer's criteria for potentially inappropriate medications to better understand the reasoning. Would you still like to proceed?")) {
+                        if (confirm("WARNING! You are prescribing 'Valium' to a person who is aged 77 years old, which might be dangerous for an elderly patient! Please review Beer's criteria for potentially inappropriate medications to better understand the reasoning. Would you still like to proceed?")) {
                             SendPOSTRequest(prescription, true);
                             alert("Prescription submitted! Click 'ok' to go back.");
                             window.location.href = '/history.html';
