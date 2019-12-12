@@ -1,4 +1,4 @@
-# patienthelper
+# mTrackr
 
 Developed an Angular JS based web application where:
 - Patients can log their symptoms and medications.
